@@ -95,3 +95,4 @@ C:\Users\Lucas\Desktop\I4DS\TechChallenge\TechChallenge\obj\Debug\net10.0\refint
 C:\Users\Lucas\Desktop\I4DS\TechChallenge\TechChallenge\obj\Debug\net10.0\TechChallenge.pdb
 C:\Users\Lucas\Desktop\I4DS\TechChallenge\TechChallenge\obj\Debug\net10.0\TechChallenge.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\I4DS\TechChallenge\TechChallenge\obj\Debug\net10.0\ref\TechChallenge.dll
+C:\Users\Lucas\Desktop\I4DS\TechChallenge\TechChallenge\obj\Debug\net10.0\TechChallenge.sourcelink.json
