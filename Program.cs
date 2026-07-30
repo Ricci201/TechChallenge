@@ -1,7 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using TechChallenge;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Adicionar serviço de banco de dados (EntityFramework)
+builder.Services.AddDbContext<AppDbContext>(
+    options =>
+        options.UseSqlServer(
+            builder.Configuration.GetConnectionString("DefaultConnection")
+        )
+);
+
 
 var app = builder.Build();
 
