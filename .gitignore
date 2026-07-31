@@ -2,6 +2,9 @@
 bin/
 obj/
 
+# Arquivos gerados pelo banco local durante a execucao
+App_Data/
+
 # Visual Studio Code
 .vscode/
 
