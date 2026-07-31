@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iu63ZjGO0RQ=",
+  "dgSpecHash": "rBBykLDnToQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Documents\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
+  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -134,9 +134,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "O pacote 'NuGet.Packaging' 6.12.1 tem uma baixa vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Lucas\\Documents\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Lucas\\Documents\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
+      "filePath": "C:\\Users\\Lucas\\Desktop\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
       "libraryId": "NuGet.Packaging",
       "targetGraphs": [
         "net10.0"
@@ -146,9 +146,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "O pacote 'NuGet.Protocol' 6.12.1 tem uma baixa vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Lucas\\Documents\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Lucas\\Documents\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
+      "filePath": "C:\\Users\\Lucas\\Desktop\\I4DS\\TechChallenge\\TechChallenge\\TechChallenge.csproj",
       "libraryId": "NuGet.Protocol",
       "targetGraphs": [
         "net10.0"
