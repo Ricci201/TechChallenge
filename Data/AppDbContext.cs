@@ -14,4 +14,5 @@ public class AppDbContext : DbContext
     // DbSet -> Representação da Tabela no Sistema
     // Para cada model do sistema que for virar uma tabela no Banco de Dados, deverá ser adicionado um Db
     public DbSet<Aluno> Alunos {get; set;}
+    public DbSet<Categoria> Categorias { get; set; }
 }
