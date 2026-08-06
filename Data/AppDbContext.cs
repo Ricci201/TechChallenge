@@ -1,30 +1,49 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TechChallenge.Models;
 
 namespace TechChallenge;
 
-public class AppDbContext : DbContext  // Herança do Contexto do EF Core
+public class AppDbContext : IdentityDbContext<IdentityUser>
 {
-    // Herança no Método Construtor
+    // Construtor do Contexto do EF Core
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-    {}
-    /*
-        DbSet -> Representação da Tabela no Sistema.
-        Para cada model do sistema que for virar uma tabela no Banco de
-        de Dados, deverá ser adicionado um DbSet
-    */
-    public DbSet<Aluno> Alunos {get; set;}  
-    public DbSet<Categoria> Categorias {get; set;} 
-    public DbSet<Professor> Professores { get; set; }
-    public DbSet<Equipe> Equipes { get; set; }
-    public DbSet<AlunoEquipe> AlunosEquipes { get; set; }
-    public DbSet<Projeto> Projetos { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-   	{
-        base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<AlunoEquipe>().HasKey(ae => new { ae.AlunoId, ae.EquipeId });
-
+    {
     }
 
+    /*
+        DbSet -> Representação das tabelas no banco de dados.
+
+        Cada Model que deve virar uma tabela precisa
+        ser declarado aqui.
+    */
+
+    public DbSet<Aluno> Alunos { get; set; }
+
+    public DbSet<Categoria> Categorias { get; set; }
+
+    public DbSet<Professor> Professores { get; set; }
+
+    public DbSet<Equipe> Equipes { get; set; }
+
+    public DbSet<AlunoEquipe> AlunosEquipes { get; set; }
+
+    public DbSet<Projeto> Projetos { get; set; }
+
+
+    // Configurações das entidades
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+
+        // Chave composta da tabela de relacionamento AlunoEquipe
+        modelBuilder.Entity<AlunoEquipe>()
+            .HasKey(ae => new 
+            { 
+                ae.AlunoId, 
+                ae.EquipeId 
+            });
+    }
 }
