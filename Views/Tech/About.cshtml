@@ -2,7 +2,42 @@
     ViewData["Title"] = "Sobre";
 }
 
-<div class="container mt-4">
-    <h1>@ViewData["Title"]</h1>
-    <p>@ViewData["Message"]</p>
+<div class="container py-4 tech-page">
+    <section class="tech-hero mb-4">
+        <p class="tech-chip mb-3">Sobre a plataforma</p>
+        <h1 class="display-5 fw-bold mb-3">@ViewData["Title"]</h1>
+        <p class="lead text-muted mb-0">@ViewData["Message"]</p>
+    </section>
+
+    <section class="row g-4">
+        <div class="col-12 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">🎯</div>
+                    <h2 class="h4 fw-bold">Missão</h2>
+                    <p class="text-muted mb-0">Aproximar estudantes de projetos práticos, com experiência visual clara e motivadora.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">✨</div>
+                    <h2 class="h4 fw-bold">Como funciona</h2>
+                    <p class="text-muted mb-0">A plataforma reúne desafios, projetos e pontuação em uma navegação simples e organizada.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">🚀</div>
+                    <h2 class="h4 fw-bold">Objetivo</h2>
+                    <p class="text-muted mb-0">Criar um ambiente que combine estudo, colaboração e evolução contínua de forma elegante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

@@ -1,4 +1,4 @@
-namespace TechChallenge.Models;
+namespace TechChallenge;
 
 public class AlunoEquipe
 {

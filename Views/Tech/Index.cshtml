@@ -2,7 +2,65 @@
     ViewData["Title"] = "TechChallenge";
 }
 
-<div class="container mt-4">
-    <h1 class="display-4">@ViewData["Title"]</h1>
-    <p class="lead">@ViewData["Message"]</p>
+</div>
+<div class="container py-4 tech-page">
+    <section class="tech-hero text-center mb-4">
+        <p class="tech-chip mb-3">Olá, bem-vindo</p>
+        <p class="tech-chip mb-3">Plataforma estudantil</p>
+        <h1 class="display-1 fw-bold mb-3">TechChallenge</h1>
+        <p class="lead text-muted text-center mx-auto mb-4" style="max-width: 760px;">
+            Plataforma de projetos e inovação estudantil para transformar ideias em soluções reais, com colaboração e progresso visível.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <span class="tech-badge">Equipes</span>
+            <span class="tech-badge">Desafios</span>
+            <span class="tech-badge">Ranking</span>
+        </div>
+    </section>
+
+    <section class="row g-4 align-items-stretch mb-4">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">👥</div>
+                    <h2 class="h4 fw-bold">Crie equipes e projetos</h2>
+                    <p class="text-muted mb-0">
+                        Organize times para tirar ideias do papel e acompanhar cada etapa do desenvolvimento.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">🏁</div>
+                    <h2 class="h4 fw-bold">Participe de desafios</h2>
+                    <p class="text-muted mb-0">
+                        Encontre desafios, submeta soluções e acompanhe o progresso dos projetos em um só lugar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">📊</div>
+                    <h2 class="h4 fw-bold">Ganhe pontos e suba no ranking</h2>
+                    <p class="text-muted mb-0">
+                        Valorize a participação com pontuação e descubra quem está se destacando na plataforma.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-panel text-center p-4 p-md-5">
+        <p class="fs-5 fw-semibold mb-2">O lugar onde suas ideias viram projetos reais</p>
+        <p class="text-muted mb-0">
+            Um ambiente pensado para colaboração, inovação e aprendizado na prática.
+        </p>
+    </section>
 </div>

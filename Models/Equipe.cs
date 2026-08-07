@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TechChallenge.Models;
+namespace TechChallenge;
 
 public class Equipe
 {

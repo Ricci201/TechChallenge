@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TechChallenge.Models;
+namespace TechChallenge;
 
 public class Projeto
 {
@@ -13,7 +13,7 @@ public class Projeto
     public int ProfessorId { get; set; }
     public int CategoriaId { get; set; }
     public int EquipeId { get; set; }
-    public Professor Professor { get; set; }
-    public Categoria Categoria { get; set; }
-    public Equipe Equipe { get; set; }
+    public Professor? Professor { get; set; }
+    public Categoria? Categoria { get; set; }
+    public Equipe? Equipe { get; set; }
 }

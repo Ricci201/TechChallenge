@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TechChallenge;
-using TechChallenge.Models;
 
 namespace TechChallenge.Controllers
 {
@@ -60,7 +59,7 @@ namespace TechChallenge.Controllers
             {
                 _context.Add(aluno);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Aluno(a) Cadastrado(a) com sucesso!";
+                TempData["Success"] = "Aluno(a) Cadastrado";
                 return RedirectToAction(nameof(Index));
             }
             return View(aluno);
@@ -99,7 +98,7 @@ namespace TechChallenge.Controllers
                 try
                 {
                     _context.Update(aluno);
-                    TempData["Success"] = "Aluno(a) Atualizado(a) com sucesso!";
+                     TempData["Success"] = "Aluno(a) Atualizado";
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -148,7 +147,7 @@ namespace TechChallenge.Controllers
             }
 
             await _context.SaveChangesAsync();
-            TempData["Success"] = "Aluno(a) Excluído(a) com sucesso!";
+             TempData["Success"] = "Aluno(a) Removido";
             return RedirectToAction(nameof(Index));
         }
 

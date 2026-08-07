@@ -2,7 +2,42 @@
     ViewData["Title"] = "Contato";
 }
 
-<div class="container mt-4">
-    <h1>@ViewData["Title"]</h1>
-    <p>@ViewData["Message"]</p>
+<div class="container py-4 tech-page">
+    <section class="tech-hero mb-4 text-center">
+        <p class="tech-chip mb-3">Fale com a gente</p>
+        <h1 class="display-5 fw-bold mb-3">@ViewData["Title"]</h1>
+        <p class="lead text-muted mb-0">@ViewData["Message"]</p>
+    </section>
+
+    <section class="row g-4">
+        <div class="col-12 col-md-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">✉️</div>
+                    <h2 class="h5 fw-bold">E-mail</h2>
+                    <p class="text-muted mb-0"><a class="tech-contact-link" href="mailto:contato@techchallenge.com">contato@techchallenge.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">💬</div>
+                    <h2 class="h5 fw-bold">Suporte</h2>
+                    <p class="text-muted mb-0">Envie dúvidas sobre projetos, desafios e uso da plataforma.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="card tech-card h-100 border-0">
+                <div class="card-body">
+                    <div class="fs-2 mb-3">📍</div>
+                    <h2 class="h5 fw-bold">Atendimento</h2>
+                    <p class="text-muted mb-0">Respostas organizadas para manter a experiência simples e objetiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

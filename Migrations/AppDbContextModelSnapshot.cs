@@ -220,6 +220,55 @@ namespace TechChallenge.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("TechChallenge.Aluno", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Alunos");
+                });
+
+            modelBuilder.Entity("TechChallenge.AlunoEquipe", b =>
+                {
+                    b.Property<int>("AlunoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EquipeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataEntrada")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("AlunoId", "EquipeId");
+
+                    b.HasIndex("EquipeId");
+
+                    b.ToTable("AlunosEquipes");
+                });
+
             modelBuilder.Entity("TechChallenge.Categoria", b =>
                 {
                     b.Property<int>("Id")
@@ -251,59 +300,7 @@ namespace TechChallenge.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("TechChallenge.Models.Aluno", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Alunos");
-                });
-
-            modelBuilder.Entity("TechChallenge.Models.AlunoEquipe", b =>
-                {
-                    b.Property<int>("AlunoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EquipeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataEntrada")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("AlunoId", "EquipeId");
-
-                    b.HasIndex("EquipeId");
-
-                    b.ToTable("AlunosEquipes");
-                });
-
-            modelBuilder.Entity("TechChallenge.Models.Equipe", b =>
+            modelBuilder.Entity("TechChallenge.Equipe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -331,7 +328,40 @@ namespace TechChallenge.Migrations
                     b.ToTable("Equipes");
                 });
 
-            modelBuilder.Entity("TechChallenge.Models.Projeto", b =>
+            modelBuilder.Entity("TechChallenge.Professor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DataContratacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Especialidade")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Professores");
+                });
+
+            modelBuilder.Entity("TechChallenge.Projeto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -375,39 +405,6 @@ namespace TechChallenge.Migrations
                     b.HasIndex("ProfessorId");
 
                     b.ToTable("Projetos");
-                });
-
-            modelBuilder.Entity("TechChallenge.Professor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("DataContratacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Especialidade")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Professores");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -461,15 +458,15 @@ namespace TechChallenge.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TechChallenge.Models.AlunoEquipe", b =>
+            modelBuilder.Entity("TechChallenge.AlunoEquipe", b =>
                 {
-                    b.HasOne("TechChallenge.Models.Aluno", "Aluno")
+                    b.HasOne("TechChallenge.Aluno", "Aluno")
                         .WithMany()
                         .HasForeignKey("AlunoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TechChallenge.Models.Equipe", "Equipe")
+                    b.HasOne("TechChallenge.Equipe", "Equipe")
                         .WithMany("AlunosEquipes")
                         .HasForeignKey("EquipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -480,7 +477,7 @@ namespace TechChallenge.Migrations
                     b.Navigation("Equipe");
                 });
 
-            modelBuilder.Entity("TechChallenge.Models.Projeto", b =>
+            modelBuilder.Entity("TechChallenge.Projeto", b =>
                 {
                     b.HasOne("TechChallenge.Categoria", "Categoria")
                         .WithMany()
@@ -488,7 +485,7 @@ namespace TechChallenge.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TechChallenge.Models.Equipe", "Equipe")
+                    b.HasOne("TechChallenge.Equipe", "Equipe")
                         .WithMany("Projetos")
                         .HasForeignKey("EquipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -507,7 +504,7 @@ namespace TechChallenge.Migrations
                     b.Navigation("Professor");
                 });
 
-            modelBuilder.Entity("TechChallenge.Models.Equipe", b =>
+            modelBuilder.Entity("TechChallenge.Equipe", b =>
                 {
                     b.Navigation("AlunosEquipes");
 

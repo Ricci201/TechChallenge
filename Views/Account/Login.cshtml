@@ -1,0 +1,25 @@
+@model TechChallenge.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form asp-action="Login" method="post">
+    <input asp-for="ReturnUrl" type="hidden" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+
+    <input asp-for="Senha" class="form-control" type="password" />
+    <span asp-validation-for="Senha" class="text-danger"></span>
+
+    <input asp-for="Lembrar" type="checkbox" />
+    <label asp-for="Lembrar">Lembrar-me</label>
+
+    <button type="submit">Entrar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

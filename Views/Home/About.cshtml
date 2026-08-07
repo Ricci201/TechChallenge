@@ -1,12 +1,14 @@
 @{
-    ViewData["Title"] = "About";
+    // Define o título da página que será exibido na aba do navegador
+    ViewData["Title"] = "Sobre Nós";
 }
+
 <div class="container">
     <h1>Sobre Nós</h1>
 
-    <h2>Utilizando o Componente ViewData</h2>
-    <p>Nome: @ViewData["Nome"] - Idade: @ViewData["Idade"]</p>
+    <h2>utilizando o componente ViewData</h2>
+    <p>Nome: @ViewData[ "Nome"] - Idade: @ViewData[ "Idade"]</p>
 
-    <h2>Utilizando o componente ViewBag</h2>
-   <p>Cidade: @ViewBag.Cidade - UF: @ViewBag.UF</p> 
+    <h2>utilizando o componente ViewBag</h2>
+    <p>Cidade: @ViewBag.Cidade - UF: @ViewBag.UF</p>
 </div>

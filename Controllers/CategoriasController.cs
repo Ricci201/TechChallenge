@@ -55,11 +55,10 @@ namespace TechChallenge.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Cor,Ativa,DataCadastro")] Categoria categoria)
         {
-            if (_context.Categorias.Any(c => c.Nome == categoria.Nome))
+                if (_context.Categorias.Any(c => c.Nome == categoria.Nome))
             {
-                ModelState.AddModelError("Nome", "Já exsite uma categoria com esse nome.");
-            }
-
+                ModelState.AddModelError("Nome","Já existe um categoria com esse nome.");
+            }  
             if (ModelState.IsValid)
             {
                 _context.Add(categoria);
