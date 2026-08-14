@@ -1,0 +1,49 @@
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewData["Title"] = "Perfis de usuários";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <div>
+        <h1 class="mb-1">Perfis de usuários</h1>
+        <p class="text-muted mb-0">Gerencie os perfis que definem o acesso ao sistema.</p>
+    </div>
+    <a asp-action="CriarRole" class="btn btn-primary">Novo perfil</a>
+</div>
+
+<div class="tech-table-wrap">
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>Perfil</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    @foreach (var role in Model)
+                    {
+                        <tr>
+                            <td>@role.Name</td>
+                            <td>
+                                <div class="table-actions justify-content-end">
+                                    <a asp-action="EditarRole" asp-route-id="@role.Id" class="btn btn-sm btn-outline-primary">Editar</a>
+                                    <a asp-action="ExcluirRole" asp-route-id="@role.Id" class="btn btn-sm btn-outline-danger">Remover</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2" class="text-center text-muted py-4">Nenhum perfil cadastrado.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

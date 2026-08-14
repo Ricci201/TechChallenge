@@ -1,0 +1,56 @@
+@model TechChallenge.UsuarioAdminEditarViewModel
+
+@{
+    ViewData["Title"] = "Editar usuário";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <h1>Editar usuário</h1>
+        <p class="text-muted">Deixe a nova senha em branco para mantê-la inalterada.</p>
+
+        <form asp-action="EditarUsuario" method="post">
+            <input asp-for="Id" type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Perfil" class="form-label"></label>
+                <select asp-for="Perfil" asp-items="Model.PerfisDisponiveis" class="form-select">
+                    <option value="">Selecione um perfil</option>
+                </select>
+                <span asp-validation-for="Perfil" class="text-danger"></span>
+            </div>
+
+            <hr class="my-4" />
+            <h2 class="h5">Alterar senha</h2>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="NovaSenha" class="form-label"></label>
+                    <input asp-for="NovaSenha" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="NovaSenha" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label asp-for="ConfirmarNovaSenha" class="form-label"></label>
+                    <input asp-for="ConfirmarNovaSenha" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="ConfirmarNovaSenha" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                <a asp-action="Usuarios" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

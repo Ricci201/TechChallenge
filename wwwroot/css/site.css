@@ -46,7 +46,45 @@ footer.footer a{color:#c7d2fe}
 .btn-primary:hover,.btn-primary:focus{background:#111827;border-color:#111827}
 .btn-success{background:#1d4d4f;border-color:#1d4d4f}
 .btn-success:hover,.btn-success:focus{background:#163a3b;border-color:#163a3b}
-.table{--bs-table-bg:transparent;border-color:var(--tc-border)}
-.table thead th{background:#eef3f9;border-bottom:none;color:var(--tc-slate);font-weight:700}
-.table tbody td{color:var(--tc-text)}
+.table{--bs-table-bg:transparent;border-color:var(--tc-border);border-collapse:separate;border-spacing:0;border-radius:1rem;overflow:hidden;box-shadow:0 10px 22px rgba(15,23,42,.04)}
+.table thead th{background:linear-gradient(180deg,#eff5fb 0%,#eaf1f8 100%);border-bottom:none;color:var(--tc-slate);font-weight:700;padding:.9rem .9rem;letter-spacing:.01em}
+.table thead th:first-child{border-top-left-radius:1rem}
+.table thead th:last-child{border-top-right-radius:1rem}
+.table tbody td{color:var(--tc-text);padding:.85rem .9rem;vertical-align:middle;border-top:1px solid rgba(148,163,184,.24);background:rgba(255,255,255,.7)}
+.table tbody tr{transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease}
+.table tbody tr:hover td{background:rgba(234,244,244,.85)}
+.table tbody tr:last-child td:first-child{border-bottom-left-radius:1rem}
+.table tbody tr:last-child td:last-child{border-bottom-right-radius:1rem}
+.table td a,.table td .btn,.table td button{margin-right:.35rem}
+.table td a{color:var(--tc-accent);font-weight:700;text-decoration:none;border-radius:.5rem;padding:.28rem .5rem;transition:background-color .15s ease,color .15s ease}
+.table td a:hover{background:var(--tc-accent-soft);color:var(--tc-accent-strong);text-decoration:none}
 .card,.list-group-item,.alert{border-radius:.9rem}
+
+.tech-table-wrap{background:rgba(255,255,255,.9);border:1px solid var(--tc-border);border-radius:1rem;box-shadow:0 10px 22px rgba(15,23,42,.04);padding:1rem;overflow:hidden}
+.tech-table-wrap .table{margin-bottom:0}
+.tech-table-wrap .table thead th{padding-top:1rem;padding-bottom:1rem}
+.tech-table-wrap .table-actions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.tech-table-wrap .table-actions .btn{padding:.38rem .8rem;font-size:.85rem;border-radius:.6rem}
+
+.badge{border-radius:999px;padding:.42rem .7rem;font-weight:700;letter-spacing:.02em}
+.badge.bg-success{background:#1d4d4f!important}
+.badge.bg-secondary{background:#64748b!important}
+
+form{background:rgba(255,255,255,.88);border:1px solid var(--tc-border);border-radius:1rem;padding:1.15rem 1rem;box-shadow:0 10px 22px rgba(15,23,42,.03)}
+.form-group{margin-bottom:1rem}
+.form-group label,.control-label{display:block;font-weight:700;color:var(--tc-slate);margin-bottom:.45rem}
+.form-control,.form-select{background:#fff;border:1px solid var(--tc-border);border-radius:.75rem;padding:.7rem .8rem;color:var(--tc-text);box-shadow:none;transition:border-color .15s ease,box-shadow .15s ease,background-color .15s ease}
+.form-control:focus,.form-select:focus{border-color:rgba(29,77,79,.6);box-shadow:0 0 0 .18rem rgba(29,77,79,.12)}
+.form-check{display:flex;align-items:center;gap:.55rem;padding-left:0;margin:1rem 0}
+.form-check-input{width:1.1rem;height:1.1rem;border:1px solid var(--tc-border);border-radius:.38rem;box-shadow:none}
+.form-check-input:checked{background-color:var(--tc-accent);border-color:var(--tc-accent)}
+.form-check-label{margin-bottom:0;color:var(--tc-text);font-weight:600}
+form .btn{margin-top:.35rem}
+
+.dl-row, dl.row{background:rgba(255,255,255,.9);border:1px solid var(--tc-border);border-radius:1rem;padding:1rem;box-shadow:0 10px 22px rgba(15,23,42,.03)}
+dl.row{margin-bottom:0}
+dl.row dt{color:var(--tc-slate);font-weight:700;padding:.65rem .75rem;background:var(--tc-surface-soft);border-radius:.65rem;border:1px solid rgba(148,163,184,.18);margin-bottom:.6rem}
+dl.row dd{padding:.65rem .75rem;margin-bottom:.6rem;color:var(--tc-text);border-bottom:1px solid rgba(148,163,184,.12)}
+
+a[asp-action="Index"], a[asp-action="Create"], a[asp-action="Edit"], a[asp-action="Details"], a[asp-action="Delete"], a[asp-action="Back to List"], a[asp-action="BackToList"]{color:var(--tc-accent);font-weight:700;text-decoration:none}
+a[asp-action="Index"]:hover, a[asp-action="Create"]:hover, a[asp-action="Edit"]:hover, a[asp-action="Details"]:hover, a[asp-action="Delete"]:hover, a[asp-action="Back to List"]:hover, a[asp-action="BackToList"]:hover{text-decoration:underline}

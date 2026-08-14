@@ -1,0 +1,29 @@
+@model TechChallenge.PerfilAdminViewModel
+
+@{
+    ViewData["Title"] = "Novo perfil";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <h1>Novo perfil</h1>
+        <p class="text-muted">Crie um perfil para atribuir aos usuários.</p>
+
+        <form asp-action="CriarRole" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="mb-4">
+                <label asp-for="Nome" class="form-label"></label>
+                <input asp-for="Nome" class="form-control" autofocus />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar perfil</button>
+                <a asp-action="Roles" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
