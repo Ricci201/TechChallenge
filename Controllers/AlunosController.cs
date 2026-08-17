@@ -13,6 +13,8 @@ namespace TechChallenge.Controllers
     {
         private readonly AppDbContext _context;
 
+        public string? SearchString { get; private set; }
+
         public AlunosController(AppDbContext context)
         {
             _context = context;
@@ -21,6 +23,13 @@ namespace TechChallenge.Controllers
         // GET: Alunos
         public async Task<IActionResult> Index()
         {
+            var alunos = _context.Alunos.AsQueryable();
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                alunos = alunos.Where(a => a.Nome.Contains(SearchString));
+            }
+
             return View(await _context.Alunos.ToListAsync());
         }
 
@@ -98,7 +107,7 @@ namespace TechChallenge.Controllers
                 try
                 {
                     _context.Update(aluno);
-                     TempData["Success"] = "Aluno(a) Atualizado";
+                    TempData["Success"] = "Aluno(a) Atualizado";
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -147,7 +156,7 @@ namespace TechChallenge.Controllers
             }
 
             await _context.SaveChangesAsync();
-             TempData["Success"] = "Aluno(a) Removido";
+            TempData["Success"] = "Aluno(a) Removido";
             return RedirectToAction(nameof(Index));
         }
 
